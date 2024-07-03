@@ -1,4 +1,6 @@
 import 'dart:io';
+import 'package:bmi_calculator/icon_colum.dart';
+import 'package:bmi_calculator/reusebale_container.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 const bottomContainerHeight = 80.0;
@@ -26,27 +28,20 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: reusablecont(
                     colour:Color(reusablecontColor),
-                    cardChild: Column(
-                      children: <Widget>[
-                        Icon(
-                          FontAwesomeIcons.mars,
-                          size: 80.0,
-                        ),
-                        SizedBox(
-                          height: 15.0,
-                        ),
-                        Text()
-                      ],
-                    ),
+                    cardChild: iconColumn( iconData: FontAwesomeIcons.mars, textData: 'MALE',),
                   ),
                 ),
                 Expanded(
-                  child: reusablecont(colour:Color(reusablecontColor),cardChild: Column(),),
+                  child: reusablecont(colour:Color(reusablecontColor),cardChild: iconColumn(iconData: FontAwesomeIcons.venus, textData: 'FEMALE'),),
                 )
               ],
             )),
             Expanded(
-              child: Expanded(child: reusablecont(colour:Color(reusablecontColor),cardChild: Column())),
+              child: Expanded(
+                child: Container(
+                  color: Color(reusablecontColor),
+                  margin: const EdgeInsets.all(15.0),
+                ))
             ),
             Expanded(
                 child: Row(
@@ -69,19 +64,4 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-class reusablecont extends StatelessWidget {
-  reusablecont({required this.colour, required this.cardChild});
-  final Color colour;
-  final Widget cardChild;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: cardChild,
-      margin: const EdgeInsets.all(15.0),
-      decoration: BoxDecoration(
-        color: colour,
-        borderRadius: BorderRadius.circular(10.0),
-      ),
-    );
-  }
-}
+
