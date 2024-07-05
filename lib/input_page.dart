@@ -58,7 +58,6 @@ class _InputPageState extends State<InputPage> {
                     onTap: () {
                       setState(() {
                         updateColour(Gender.male);
-                        print('Male was pressed');
                       });
                     },
                     child: reusablecont(
@@ -105,8 +104,8 @@ class _InputPageState extends State<InputPage> {
               ],
             )),
             Container(
-              color: Color(bottomContainerColor),
-              margin: EdgeInsets.only(top: 10.0),
+              color: const Color(bottomContainerColor),
+              margin: const EdgeInsets.only(top: 10.0),
               width: double.infinity,
               height: bottomContainerHeight,
             )
